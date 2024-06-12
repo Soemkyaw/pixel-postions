@@ -6,7 +6,7 @@
     </div>
     <div class=" flex-1 flex flex-col">
         <div class=" self-start text-sm text-gray-500">{{ $job->employer->name }}</div>
-        <h3 class=" text-xl mt-3  group-hover:text-blue-700 transition-colors duration-300">{{ $job->title }}</h3>
+        <a href="/jobs/{{ strtolower($job->title) }}" class=" text-xl mt-3  group-hover:text-blue-700 transition-colors duration-300">{{ $job->title }}</a>
         <p class="text-sm text-gray-400 mt-auto">{{  number_format($job->salary) }} MMK</p>
     </div>
     <div>

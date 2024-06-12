@@ -16,6 +16,7 @@ use App\Http\Controllers\RegisteredUserController;
 Route::get('/',[JobController::class,'index']);
 Route::get('/jobs',[JobController::class,'create']);
 Route::post('/jobs',[JobController::class,'store'])->name('jobs.store');
+Route::get('jobs/{job:title}',[JobController::class,'show']);
 Route::get('/search',SearchController::class,'search');
 Route::get('/tag/{tag:name}',[TagController::class,'search']);
 

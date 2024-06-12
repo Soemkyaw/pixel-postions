@@ -35,7 +35,7 @@
                     <form action="/logout" method="POST">
                         @method('DELETE')
                         @csrf
-                        <button class="hover:text-red-500">logout</button>
+                        <button class="text-red-500">logout</button>
                     </form>
                 </div>
             @endauth
@@ -53,44 +53,4 @@
     </div>
 </body>
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
-    {{-- <script>
-        var quill = new Quill('#editor', {
-            theme: 'snow'
-        });
-
-        var quill2 = new Quill('#editor2', {
-            theme: 'snow'
-        });
-
-        // Add Tailwind classes to the Quill toolbar and its buttons
-        var toolbar = document.querySelector('.ql-toolbar');
-        toolbar.classList.add('bg-white/10', 'text-black');
-
-        var toolbarButtons = toolbar.querySelectorAll('button');
-        toolbarButtons.forEach(function(button) {
-            button.classList.add('text-white');
-        });
-
-        var toolbarPickers = toolbar.querySelectorAll('.ql-picker-label');
-        toolbarPickers.forEach(function(picker) {
-            picker.classList.add('text-white');
-        });
-
-        var toolbarPickerOptions = toolbar.querySelectorAll('.ql-picker-options');
-        toolbarPickerOptions.forEach(function(pickerOptions) {
-            pickerOptions.classList.add('bg-black', 'text-black');
-        });
-
-        // Listen for changes and update hidden textarea
-        quill.on('text-change', function() {
-            var html = quill.root.innerHTML;
-            document.getElementById('hiddenContent').value = html;
-        });
-        quill2.on('text-change', function() {
-            var html = quill.root.innerHTML;
-            document.getElementById('hiddenContent2').value = html;
-        });
-    </script> --}}
-
 </html>

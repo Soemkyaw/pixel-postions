@@ -65,7 +65,7 @@
 
             <div class="">
                 <x-form.form-label class="form-label">Tags <span class=" text-sm text-white/50">(comma separated)</span></x-form.form-label>
-                <x-form.form-input name="tags" placeholder="asddsagxciosgns"></x-form.form-input>
+                <x-form.form-input name="tags" placeholder=""></x-form.form-input>
                 <x-form.form-error name="tags" />
             </div>
 

@@ -22,7 +22,7 @@ class JobFactory extends Factory
             'title' => fake()->jobTitle(),
             'job_descriptions' => fake()->paragraph(),
             'job_requirements' => fake()->paragraph(),
-            'recruiting candidates' => fake()->randomElement(['Male - 1','Female - 1','Male/Female - 1']),
+            'recruiting_candidates' => fake()->randomElement(['Male - 1','Female - 1','Male/Female - 1']),
             'location' => "Yangon",
             'schedule' => 'Full Time',
             'salary' => fake()->randomElement([180000,200000,300000,600000,800000,1000000,1200000,1500000]),

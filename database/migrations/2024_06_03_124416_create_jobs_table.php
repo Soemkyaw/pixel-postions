@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('job_descriptions');
             $table->text('job_requirements');
-            $table->string('recruiting candidates');
+            $table->string('recruiting_candidates');
             $table->text('location');
             $table->string('schedule')->default('Full Time');
             $table->integer('salary');

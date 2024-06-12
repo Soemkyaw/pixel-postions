@@ -9,6 +9,8 @@ class TagController extends Controller
 {
     public function search(Tag $tag)
     {
+        $tag->load('jobs.employer');
+        
         return view('result',[
             "jobs" => $tag->jobs
         ]);

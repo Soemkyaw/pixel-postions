@@ -15,9 +15,9 @@ class SalaryController extends Controller
     public function show($min,$max)
     {
         if ($max == 0) {
-            $jobs = Job::latest()->where('salary','>=',$min)->get();
+            $jobs = Job::query()->with(['tags','employer'])->latest()->where('salary','>=',$min)->get();
         }else{
-            $jobs = Job::latest()->whereBetween('salary', [$min, $max])->get();
+            $jobs = Job::query()->with(['tags','employer'])->latest()->whereBetween('salary', [$min, $max])->get();
         }
 
         return view('result',[

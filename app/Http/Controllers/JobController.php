@@ -29,7 +29,8 @@ class JobController extends Controller
 
     public function index()
     {
-        $jobs = Job::latest()->get();
+        // $jobs = Job::latest()->get();
+        $jobs = Job::query()->with(['tags','employer'])->latest()->get();
         return view('jobs.index',[
             'jobs' => $jobs,
             'tags' => Tag::all()
@@ -49,18 +50,18 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $attributes = $request->validate([
             'title' => ['required'],
-            'job_descriptions' => ['']
+            'job_descriptions' => ['required'],
+            'job_requirements' => ['required'],
+            'recruiting_candidates' => ['required'],
             'salary' => ['required'],
             'location' => ['required'],
-            'title' => ['required'],
             'schedule' => ['required',Rule::in(['Full Time','Part Time'])],
+            'contact_number' => ['required'],
             'tags' => ['nullable']
         ]);
-
-        $attributes['featured'] = $request->has('feature');
 
         $job = Auth::user()->employer->jobs()->create(Arr::except($attributes,'tags'));
 
@@ -78,7 +79,9 @@ class JobController extends Controller
      */
     public function show(Job $job)
     {
-        //
+        return view('jobs.show',[
+            'job' => $job
+        ]);
     }
 
     /**
