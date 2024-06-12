@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.custom-select option {
+    background-color: #333;
+    color: #fff;
+}
+
+.custom-select:hover {
+    cursor: pointer;
+}
